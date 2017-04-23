@@ -1,4 +1,8 @@
 version: 1.0.{build}
+build_script:
+  - dotnet restore
+  - dotnet build Byggkostnad.Forms
+  - dotnet publish Byggkostnad.Forms
 pull_requests:
   do_not_increment_build_number: true
 build:
