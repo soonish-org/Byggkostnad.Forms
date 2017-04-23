@@ -1,0 +1,16 @@
+version: 1.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
+build:
+  verbosity: minimal
+deploy:
+- provider: WebDeploy
+  server: byggkostnad-forms.scm.azurewebsites.net:443/msdeploy.axd?site=byggkostnad-forms
+  website: byggkostnad-forms
+  username: $byggkostnad-forms
+  password:
+    secure: aiAIqTlNBs1kAMx/1w+bF5ZbounZDG1FWBizj4PFjWlsQUuddso7ye9zqvBgrvxRF4ujGBh1/ORaJwC9j8NnTw==
+  aspnet_core: true
+  aspnet_core_force_restart: true
+  on:
+    branch: master
