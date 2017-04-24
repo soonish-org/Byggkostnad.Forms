@@ -3,6 +3,7 @@ build_script:
   - dotnet restore
   - dotnet build Byggkostnad.Forms
   - dotnet publish Byggkostnad.Forms
+  - ps: .\bin\zip_publish_folder.ps1
 pull_requests:
   do_not_increment_build_number: true
 build:
