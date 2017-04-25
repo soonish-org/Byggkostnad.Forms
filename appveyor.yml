@@ -8,6 +8,8 @@ pull_requests:
   do_not_increment_build_number: true
 build:
   verbosity: minimal
+artifacts:
+- path: Byggkostnad.Form.zip
 deploy:
 - provider: WebDeploy
   server: byggkostnad-forms.scm.azurewebsites.net:443/msdeploy.axd?site=byggkostnad-forms
