@@ -12,7 +12,7 @@ artifacts:
 - path: Byggkostnad.Forms.zip
 deploy:
 - provider: WebDeploy
-  server: byggkostnad-forms.scm.azurewebsites.net:443/msdeploy.axd?site=byggkostnad-forms
+  server: https://byggkostnad-forms.scm.azurewebsites.net:443/msdeploy.axd?site=byggkostnad-forms
   website: byggkostnad-forms
   username: $byggkostnad-forms
   password:
