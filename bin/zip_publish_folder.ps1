@@ -1,5 +1,5 @@
-$Source = "./bin/Debug/netcoreapp1.1/publish/"
-$destination = "./bin/Debug/netcoreapp1.1/artifact.zip"
+$Source = Join-Path $PSScriptRoot -ChildPath "../Byggkostnad.Forms/bin/Debug/netcoreapp1.1/publish/"
+$destination = Join-Path $PSScriptRoot -ChildPath "../Byggkostnad.Forms/bin/Debug/netcoreapp1.1/artifact.zip"
 
 If(Test-path $destination) {Remove-item $destination}
 
