@@ -9,7 +9,7 @@ pull_requests:
 build:
   verbosity: minimal
 artifacts:
-- path: Byggkostnad.Form.zip
+- path: Byggkostnad.Forms.zip
 deploy:
 - provider: WebDeploy
   server: byggkostnad-forms.scm.azurewebsites.net:443/msdeploy.axd?site=byggkostnad-forms
