@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Byggkostnad.Forms.Controllers
+namespace Soonish.Forms.Controllers
 {
     public class HomeController:Controller
     {

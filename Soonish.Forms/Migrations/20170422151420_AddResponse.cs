@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ByggKostnad.Forms.Migrations
+namespace Soonish.Forms.Migrations
 {
     public partial class AddResponse : Migration
     {

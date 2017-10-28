@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Byggkostnad.Forms", "Byggkostnad.Forms\Byggkostnad.Forms.csproj", "{B84FCEDE-D437-4C62-AF75-3D68CBAAFD9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soonish.Forms", "Soonish.Forms\Soonish.Forms.csproj", "{B84FCEDE-D437-4C62-AF75-3D68CBAAFD9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

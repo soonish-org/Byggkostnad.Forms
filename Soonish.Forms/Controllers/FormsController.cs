@@ -1,12 +1,12 @@
-﻿using ByggKostnad.Forms.Data;
+﻿using Soonish.Forms.Data;
 using Microsoft.AspNetCore.Mvc;
-using ByggKostnad.Forms.Emails;
+using Soonish.Forms.Emails;
 using System.Threading.Tasks;
-using Byggkostnad.Forms.Models;
+using Soonish.Forms.Models;
 using GlobalPhoneContext = GlobalPhone.Context;
 using PhoneNumber = GlobalPhone.Number;
 
-namespace ByggKostnad.Forms.Controllers
+namespace Soonish.Forms.Controllers
 {
     [Route("api/[controller]")]
     public class FormsController : Controller

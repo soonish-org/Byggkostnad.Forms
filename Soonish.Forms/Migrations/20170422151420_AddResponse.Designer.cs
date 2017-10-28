@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using ByggKostnad.Forms.Data;
+using Soonish.Forms.Data;
 
-namespace ByggKostnad.Forms.Migrations
+namespace Soonish.Forms.Migrations
 {
     [DbContext(typeof(FormsDbContext))]
     [Migration("20170422151420_AddResponse")]
@@ -16,7 +16,7 @@ namespace ByggKostnad.Forms.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
 
-            modelBuilder.Entity("ByggKostnad.Forms.Data.Response", b =>
+            modelBuilder.Entity("Soonish.Forms.Data.Response", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();

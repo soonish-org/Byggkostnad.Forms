@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ByggKostnad.Forms.Data
+namespace Soonish.Forms.Data
 {
 	public class Response
 	{

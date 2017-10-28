@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace ByggKostnad.Forms.Emails
+namespace Soonish.Forms.Emails
 {
     public struct Email
     {

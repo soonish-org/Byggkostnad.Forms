@@ -1,4 +1,4 @@
-﻿using ByggKostnad.Forms.Data;
+﻿using Soonish.Forms.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,7 +8,7 @@ using MySQL.Data.EntityFrameworkCore.Extensions;
 using GlobalPhone;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace ByggKostnad.Forms
+namespace Soonish.Forms
 {
     public class Startup
     {
