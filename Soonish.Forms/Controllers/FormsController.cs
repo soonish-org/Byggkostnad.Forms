@@ -12,14 +12,12 @@ namespace Soonish.Forms.Controllers
     public class FormsController : Controller
     {
         private readonly GlobalPhoneContext _globalPhone;
-        private readonly FormsDbContext _dbContext;
-        private readonly ISoonishTableStorage _soonishTable;
+        private readonly ISoonishStorage _soonishStorage;
 
-        public FormsController(GlobalPhoneContext globalPhone, FormsDbContext dbContext, ISoonishTableStorage soonishTable)
+        public FormsController(GlobalPhoneContext globalPhone, ISoonishStorage soonishStorage)
         {
             _globalPhone = globalPhone;
-            _dbContext = dbContext;
-            _soonishTable = soonishTable;
+            _soonishStorage = soonishStorage;
         }
         // GET api/values
 
@@ -46,9 +44,7 @@ namespace Soonish.Forms.Controllers
                 Name = model.Name,
                 Phone = model.Phone
             };
-            await _soonishTable.Insert(response);
-            await _dbContext.Responses.AddAsync(response);
-            await _dbContext.SaveChangesAsync();
+            await _soonishStorage.Insert(response);
             return Ok();
         }
     }

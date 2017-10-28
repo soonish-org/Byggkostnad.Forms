@@ -27,8 +27,10 @@ namespace Soonish.Forms
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /*
             services.AddDbContext<FormsDbContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            */
             services.AddOptions();
             services.Configure<AzureTableOptions>(Configuration.GetSection("AzureTable"));
             // Add framework services.
@@ -38,13 +40,14 @@ namespace Soonish.Forms
                 DbText = PhoneNumbers.Data.Get(),
                 DefaultTerritoryName = "se"
             });
+            services.AddSingleton<ISoonishStorage, SoonishTableStorage>();
             services.AddSwaggerGen(options => { });
             services.ConfigureSwaggerGen(options =>
             {
                 options.SwaggerDoc("forms", new Info
                 {
                     Version = "v1",
-                    Title = "soonish",
+                    Title = "Soonish",
                     Description = "",
                     TermsOfService = "None",
                     Contact = new Contact

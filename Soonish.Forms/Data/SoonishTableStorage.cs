@@ -10,7 +10,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 using Carable.Lazy;
 namespace Soonish.Forms.Data
 {
-    public class SoonishTableStorage:ISoonishTableStorage
+    public class SoonishTableStorage:ISoonishStorage
     {
         private readonly AzureTableOptions _options;
         private readonly IConfiguration _config;
@@ -26,7 +26,7 @@ namespace Soonish.Forms.Data
         private async Task<CloudTable> CreateTableAsync()
         {
             // Retrieve storage account information from connection string.
-            var storageAccount = CloudStorageAccount.Parse(_config.GetConnectionString("azuretable"));
+            var storageAccount = CloudStorageAccount.Parse(_config.GetConnectionString("AzureTable"));
 
             // Create a table client for interacting with the table service
             var tableClient = storageAccount.CreateCloudTableClient();
@@ -53,7 +53,6 @@ namespace Soonish.Forms.Data
             public string Email { get; set; }
             public string Phone { get; set; }
         }
-
 
         public async Task Insert(Response entity)
         {

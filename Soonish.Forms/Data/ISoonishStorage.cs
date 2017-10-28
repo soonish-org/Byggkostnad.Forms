@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 namespace Soonish.Forms.Data
 {
-    public interface ISoonishTableStorage
+    public interface ISoonishStorage
     {
         Task Insert(Response entity);
         Task<ReadOnlyCollection<Response>> GetResponsesForYear(int year);
