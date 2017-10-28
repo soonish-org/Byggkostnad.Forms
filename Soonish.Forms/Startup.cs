@@ -27,53 +27,55 @@ namespace Soonish.Forms
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-			services.AddDbContext<FormsDbContext>(options =>
-            	options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<FormsDbContext>(options =>
+                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddOptions();
+            services.Configure<AzureTableOptions>(Configuration.GetSection("AzureTable"));
             // Add framework services.
             services.AddMvc();
-			services.AddSingleton(ioc => new Context()
-			{
+            services.AddSingleton(ioc => new Context()
+            {
                 DbText = PhoneNumbers.Data.Get(),
-				DefaultTerritoryName = "se"
-			});
-			services.AddSwaggerGen(options => { });
+                DefaultTerritoryName = "se"
+            });
+            services.AddSwaggerGen(options => { });
             services.ConfigureSwaggerGen(options =>
             {
-				options.SwaggerDoc("forms", new Info
-				{
-					Version = "v1",
-					Title = "Byggkostnad",
-					Description = "",
-					TermsOfService = "None",
-					Contact = new Contact 
+                options.SwaggerDoc("forms", new Info
+                {
+                    Version = "v1",
+                    Title = "soonish",
+                    Description = "",
+                    TermsOfService = "None",
+                    Contact = new Contact
                     {
-                        Name = "Byggkostnad", 
-                        Email = "developers@byggkostnad.com", 
-                        Url = "http://byggkostnad.com" 
+                        Name = "Soonish",
+                        Email = "developers@soonish.cloud",
+                        Url = "http://soonish.cloud"
                     }
-				});
+                });
             });
-		}
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-			}
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-		    app.UseSwagger(options =>
-			{
+            app.UseSwagger(options =>
+            {
                 options.RouteTemplate = "swagger/{documentName}/swagger.json";
-			});
+            });
 
-			// Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
-			app.UseSwaggerUI(c =>
-			{
-				c.SwaggerEndpoint("/swagger/forms/swagger.json", "Byggkostnad Forms");
-			});
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/forms/swagger.json", "Soonish Forms");
+            });
             app.UseMvcWithDefaultRoute();
         }
     }
